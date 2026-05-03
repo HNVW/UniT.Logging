@@ -52,6 +52,7 @@ namespace UniT.Logging
             Debug.unityLogger.LogException(exception);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private string Wrap(string message, string context, [CallerMemberName] string logLevel = "") => $"{$"[{logLevel}]",-10} [{this.name}] [{context}] {message}";
     }
 }

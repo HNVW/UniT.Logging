@@ -8,7 +8,7 @@ namespace UniT.Logging
     {
         private readonly LogLevel logLevel;
 
-        private readonly Dictionary<string, ILogger> loggers = new Dictionary<string, ILogger>();
+        private readonly Dictionary<string, ILogger> loggers = new();
 
         protected LoggerManager(LogLevel logLevel)
         {
@@ -17,7 +17,7 @@ namespace UniT.Logging
 
         ILogger ILoggerManager.GetLogger(string name)
         {
-            return this.loggers.GetOrAdd(name, state => state.@this.CreateLogger(state.name, state.@this.logLevel), (@this: this, name));
+            return this.loggers.GetOrAdd(name, static state => state.@this.CreateLogger(state.name, state.@this.logLevel), (@this: this, name));
         }
 
         IEnumerable<ILogger> ILoggerManager.GetAllLoggers()
