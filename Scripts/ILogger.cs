@@ -1,6 +1,31 @@
+#region Define symbols
+
 #if !UNIT_LOGGING_DEBUG && !UNIT_LOGGING_INFO && !UNIT_LOGGING_WARNING && !UNIT_LOGGING_ERROR && !UNIT_LOGGING_CRITICAL && !UNIT_LOGGING_EXCEPTION && !UNIT_LOGGING_NONE
 #define UNIT_LOGGING_INFO
 #endif
+
+#if UNIT_LOGGING_DEBUG
+#define UNIT_LOGGING_INFO
+#endif
+
+#if UNIT_LOGGING_INFO
+#define UNIT_LOGGING_WARNING
+#endif
+
+#if UNIT_LOGGING_WARNING
+#define UNIT_LOGGING_ERROR
+#endif
+
+#if UNIT_LOGGING_ERROR
+#define UNIT_LOGGING_CRITICAL
+#endif
+
+#if UNIT_LOGGING_CRITICAL
+#define UNIT_LOGGING_EXCEPTION
+#endif
+
+#endregion
+
 #nullable enable
 namespace UniT.Logging
 {
@@ -39,7 +64,7 @@ namespace UniT.Logging
             logger.Debug(message, context);
         }
 
-        #if !UNIT_LOGGING_DEBUG && !UNIT_LOGGING_INFO
+        #if !UNIT_LOGGING_INFO
         [Conditional("UNIT_LOGGING_INFO")]
         #endif
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,7 +74,7 @@ namespace UniT.Logging
             logger.Info(message, context);
         }
 
-        #if !UNIT_LOGGING_DEBUG && !UNIT_LOGGING_INFO && !UNIT_LOGGING_WARNING
+        #if !UNIT_LOGGING_WARNING
         [Conditional("UNIT_LOGGING_WARNING")]
         #endif
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,7 +84,7 @@ namespace UniT.Logging
             logger.Warning(message, context);
         }
 
-        #if !UNIT_LOGGING_DEBUG && !UNIT_LOGGING_INFO && !UNIT_LOGGING_WARNING && !UNIT_LOGGING_ERROR
+        #if !UNIT_LOGGING_ERROR
         [Conditional("UNIT_LOGGING_ERROR")]
         #endif
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,7 +94,7 @@ namespace UniT.Logging
             logger.Error(message, context);
         }
 
-        #if !UNIT_LOGGING_DEBUG && !UNIT_LOGGING_INFO && !UNIT_LOGGING_WARNING && !UNIT_LOGGING_ERROR && !UNIT_LOGGING_CRITICAL
+        #if !UNIT_LOGGING_CRITICAL
         [Conditional("UNIT_LOGGING_CRITICAL")]
         #endif
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -79,7 +104,7 @@ namespace UniT.Logging
             logger.Critical(message, context);
         }
 
-        #if !UNIT_LOGGING_DEBUG && !UNIT_LOGGING_INFO && !UNIT_LOGGING_WARNING && !UNIT_LOGGING_ERROR && !UNIT_LOGGING_CRITICAL && !UNIT_LOGGING_EXCEPTION
+        #if !UNIT_LOGGING_EXCEPTION
         [Conditional("UNIT_LOGGING_EXCEPTION")]
         #endif
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

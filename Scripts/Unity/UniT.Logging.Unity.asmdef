@@ -1,0 +1,6 @@
+{
+  "name": "UniT.Logging.Unity",
+  "references": [
+    "UniT.Logging"
+  ]
+}
