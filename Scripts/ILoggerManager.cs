@@ -16,7 +16,7 @@ namespace UniT.Logging
         public ILogger GetLogger(object owner) => this.GetLogger(owner.GetType());
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public ILogger GetLogger<T>() => this.GetLogger(typeof(T));
+        public ILogger GetLogger<T>() where T : notnull => this.GetLogger(typeof(T));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ILogger GetDefaultLogger() => this.GetLogger(nameof(UniT));
