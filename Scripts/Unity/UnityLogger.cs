@@ -2,10 +2,13 @@
 namespace UniT.Logging.Unity
 {
     using System;
+    using System.Diagnostics;
     using System.Runtime.CompilerServices;
     using UnityEngine;
+    using Debug = UnityEngine.Debug;
     using ILogger = ILogger;
 
+    [DebuggerNonUserCode]
     public sealed class UnityLogger : ILogger
     {
         private readonly string name;
@@ -22,31 +25,37 @@ namespace UniT.Logging.Unity
 
         LogLevel ILogger.LogLevel { get => this.logLevel; set => this.logLevel = value; }
 
+        [HideInCallstack]
         void ILogger.Debug(string message, string context)
         {
             Debug.unityLogger.Log(nameof(UniT), this.Wrap(message, context));
         }
 
+        [HideInCallstack]
         void ILogger.Info(string message, string context)
         {
             Debug.unityLogger.Log(nameof(UniT), this.Wrap(message, context));
         }
 
+        [HideInCallstack]
         void ILogger.Warning(string message, string context)
         {
             Debug.unityLogger.LogWarning(nameof(UniT), this.Wrap(message, context));
         }
 
+        [HideInCallstack]
         void ILogger.Error(string message, string context)
         {
             Debug.unityLogger.LogError(nameof(UniT), this.Wrap(message, context));
         }
 
+        [HideInCallstack]
         void ILogger.Critical(string message, string context)
         {
             Debug.unityLogger.LogError(nameof(UniT), this.Wrap(message, context));
         }
 
+        [HideInCallstack]
         void ILogger.Exception(Exception exception, string context)
         {
             Debug.unityLogger.LogError(nameof(UniT), this.Wrap(exception.Message, context));
