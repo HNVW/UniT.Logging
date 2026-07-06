@@ -1,5 +1,7 @@
 {
   "name": "UniT.Logging.Unity.VContainer",
+  "overrideReferences": true,
+  "noEngineReferences": true,
   "references": [
     "UniT.Logging",
     "UniT.Logging.Unity",

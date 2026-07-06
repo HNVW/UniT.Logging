@@ -1,5 +1,6 @@
 {
   "name": "UniT.Logging.Unity",
+  "overrideReferences": true,
   "references": [
     "UniT.Logging"
   ]
