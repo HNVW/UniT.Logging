@@ -14,7 +14,7 @@ namespace UniT.Logging.Unity.DI
         {
             container.BindInstance(logLevel);
             container.BindInterfacesTo<UnityLoggerManager>().AsSingle();
-            container.Bind<ILogger>().FromMethod(ctx => ctx.Container.Resolve<ILoggerManager>().GetLogger(ctx.ObjectType)).AsTransient();
+            container.Bind<ILogger>().FromMethod(static ctx => ctx.Container.Resolve<ILoggerManager>().GetLogger(ctx.ObjectType)).AsTransient();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace UniT.Logging.Unity
 
         public UnityLogger(string name, LogLevel logLevel)
         {
-            this.name     = name;
+            this.name = name;
             this.logLevel = logLevel;
         }
 

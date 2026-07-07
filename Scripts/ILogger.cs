@@ -56,9 +56,9 @@ namespace UniT.Logging
     [DebuggerNonUserCode]
     public static class LoggerExtensions
     {
-        #if !UNIT_LOGGING_DEBUG
+#if !UNIT_LOGGING_DEBUG
         [Conditional("UNIT_LOGGING_DEBUG")]
-        #endif
+#endif
         [HideInCallstack]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Debug(this ILogger logger, string message, [CallerMemberName] string context = "")
@@ -67,9 +67,9 @@ namespace UniT.Logging
             logger.Debug(message, context);
         }
 
-        #if !UNIT_LOGGING_INFO
+#if !UNIT_LOGGING_INFO
         [Conditional("UNIT_LOGGING_INFO")]
-        #endif
+#endif
         [HideInCallstack]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Info(this ILogger logger, string message, [CallerMemberName] string context = "")
@@ -78,9 +78,9 @@ namespace UniT.Logging
             logger.Info(message, context);
         }
 
-        #if !UNIT_LOGGING_WARNING
+#if !UNIT_LOGGING_WARNING
         [Conditional("UNIT_LOGGING_WARNING")]
-        #endif
+#endif
         [HideInCallstack]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Warning(this ILogger logger, string message, [CallerMemberName] string context = "")
@@ -89,9 +89,9 @@ namespace UniT.Logging
             logger.Warning(message, context);
         }
 
-        #if !UNIT_LOGGING_ERROR
+#if !UNIT_LOGGING_ERROR
         [Conditional("UNIT_LOGGING_ERROR")]
-        #endif
+#endif
         [HideInCallstack]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Error(this ILogger logger, string message, [CallerMemberName] string context = "")
@@ -100,9 +100,9 @@ namespace UniT.Logging
             logger.Error(message, context);
         }
 
-        #if !UNIT_LOGGING_CRITICAL
+#if !UNIT_LOGGING_CRITICAL
         [Conditional("UNIT_LOGGING_CRITICAL")]
-        #endif
+#endif
         [HideInCallstack]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Critical(this ILogger logger, string message, [CallerMemberName] string context = "")
@@ -111,9 +111,9 @@ namespace UniT.Logging
             logger.Critical(message, context);
         }
 
-        #if !UNIT_LOGGING_EXCEPTION
+#if !UNIT_LOGGING_EXCEPTION
         [Conditional("UNIT_LOGGING_EXCEPTION")]
-        #endif
+#endif
         [HideInCallstack]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Exception(this ILogger logger, Exception exception, [CallerMemberName] string context = "")

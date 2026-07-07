@@ -14,7 +14,7 @@ namespace UniT.Logging.Unity.DI
         {
             builder.RegisterInstance(logLevel);
             builder.Register<UnityLoggerManager>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<ILogger>(container => container.Resolve<ILoggerManager>().GetDefaultLogger(), Lifetime.Singleton);
+            builder.Register(static container => container.Resolve<ILoggerManager>().GetDefaultLogger(), Lifetime.Singleton);
         }
     }
 }
