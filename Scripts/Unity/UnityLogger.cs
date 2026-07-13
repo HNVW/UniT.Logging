@@ -1,12 +1,11 @@
 #nullable enable
-namespace UniT.Logging.Unity
+namespace UniT.Logging
 {
     using System;
     using System.Diagnostics;
     using System.Runtime.CompilerServices;
     using UnityEngine;
     using Debug = UnityEngine.Debug;
-    using ILogger = ILogger;
 
     [DebuggerNonUserCode]
     public sealed class UnityLogger : ILogger
