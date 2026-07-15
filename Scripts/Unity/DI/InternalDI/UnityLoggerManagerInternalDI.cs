@@ -7,7 +7,7 @@ namespace UniT.Logging.DI
     {
         public static void AddUnityLoggerManager(this DependencyContainer container)
         {
-            container.AddUnityLoggerManager(LogLevel.Info);
+            container.AddUnityLoggerManager(LogLevel.Default);
         }
 
         public static void AddUnityLoggerManager(this DependencyContainer container, LogLevel logLevel)

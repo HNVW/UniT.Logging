@@ -7,7 +7,7 @@ namespace UniT.Logging.DI
     {
         public static void RegisterUnityLoggerManager(this IContainerBuilder builder)
         {
-            builder.RegisterUnityLoggerManager(LogLevel.Info);
+            builder.RegisterUnityLoggerManager(LogLevel.Default);
         }
 
         public static void RegisterUnityLoggerManager(this IContainerBuilder builder, LogLevel logLevel)
