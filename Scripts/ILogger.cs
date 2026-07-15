@@ -60,7 +60,6 @@ namespace UniT.Logging
         [Conditional("UNIT_LOGGING_DEBUG")]
 #endif
         [HideInCallstack]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Debug(this ILogger logger, string message, [CallerMemberName] string context = "")
         {
             if (logger.LogLevel > LogLevel.Debug) return;
@@ -71,7 +70,6 @@ namespace UniT.Logging
         [Conditional("UNIT_LOGGING_INFO")]
 #endif
         [HideInCallstack]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Info(this ILogger logger, string message, [CallerMemberName] string context = "")
         {
             if (logger.LogLevel > LogLevel.Info) return;
@@ -82,7 +80,6 @@ namespace UniT.Logging
         [Conditional("UNIT_LOGGING_WARNING")]
 #endif
         [HideInCallstack]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Warning(this ILogger logger, string message, [CallerMemberName] string context = "")
         {
             if (logger.LogLevel > LogLevel.Warning) return;
@@ -93,7 +90,6 @@ namespace UniT.Logging
         [Conditional("UNIT_LOGGING_ERROR")]
 #endif
         [HideInCallstack]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Error(this ILogger logger, string message, [CallerMemberName] string context = "")
         {
             if (logger.LogLevel > LogLevel.Error) return;
@@ -104,7 +100,6 @@ namespace UniT.Logging
         [Conditional("UNIT_LOGGING_CRITICAL")]
 #endif
         [HideInCallstack]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Critical(this ILogger logger, string message, [CallerMemberName] string context = "")
         {
             if (logger.LogLevel > LogLevel.Critical) return;
@@ -115,7 +110,6 @@ namespace UniT.Logging
         [Conditional("UNIT_LOGGING_EXCEPTION")]
 #endif
         [HideInCallstack]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Exception(this ILogger logger, Exception exception, [CallerMemberName] string context = "")
         {
             if (logger.LogLevel > LogLevel.Exception) return;
